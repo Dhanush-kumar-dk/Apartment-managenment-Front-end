@@ -1,0 +1,132 @@
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Demo Transaction with JS Checkout</title>
+    <link rel="shortcut icon" type="image/png" href="https://business.paytm.com/demo//static/images/icon.png?v=1.9">
+    <script type="text/javascript" async="" src="https://accounts.paytm.com/oauth-js-sdk/shim/bundle.js"></script><script type="application/javascript" src="https://business.paytm.com/demo//static/js/jquery.min.js"></script>
+    <link href="https://business.paytm.com/demo//static/css/style.css?v=1.9" rel="stylesheet">
+    
+    	<script type="application/javascript" src="https://securegw.paytm.in//merchantpgpui/checkoutjs/merchants/PYTMDM29354165830326.js"></script>
+	
+
+<link href="https://staticpg.paytm.in/checkoutjs/1765/paytm.style.css" rel="stylesheet" type="text/css"></head>
+<body>
+<header>
+    <div class="header-container">
+        <a href="https://developer.paytm.com/docs/">
+            <div class="logo">
+                <span><img src="https://business.paytm.com/demo//static/images/logo.png?v=1.9" alt="paytm logo image"></span>
+
+            </div>
+        </a>
+    </div>
+
+</header>
+<div class="main-content">
+    <div class="heading">
+        <h1>paynment</h1>
+    </div>
+    <div class="container">
+        <div class="topitemDetailsBox">
+            <h3 class="extra"> Shopping Cart : (1 item)</h3>
+            <div class="itemDetailsBox">
+                <div class="item-discription">
+                    <span class="itemHeading">APARTMENT RENT</span>
+                    <p class="star">
+                        <span></span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                    </p>
+                    <p><b>Rs 10000</b></p>
+                    <p class="product-description extra">Paytm provides an end-to-end online payments solution. We accept and validate
+                        Internet payments via Credit Card, Debit Card, Net-Banking,
+                        UPI and popular Wallets from the end customers in real-time.</p>
+                </div>
+            </div>
+        </div>
+        <div class="topRightBox">
+            <h3>Order Summary</h3>
+            <div class="rightBox">
+                 <div class="orderDetails">
+                    <div class="orderSummaryBox">
+                        <p class="itemprice extra"><span>Total MRP&nbsp;<b class="greyText">(Inclusive of all charges)</b></span><span>Rs 10000</span></p>
+                        <p class="itemprice"><span><b>Total Amount Payable</b></span><span><b>Rs 10000</b></span></p>
+                        <button class="button" id="paytmWithPaytm">Pay with Paytm</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <p class="grayText">*This is real transaction, and the money will be auto-refunded to your account in 4-5
+                days</p>
+        </div>
+        <!-- end of top right box -->
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    document.getElementById("paytmWithPaytm").addEventListener("click", function(){
+        onScriptLoad("1fee6e59df2b451b9380df14426fce991688629357462","1688629357442","1.00");
+    });
+    function onScriptLoad(txnToken, orderId, amount) {
+        var config = {
+            "root": "",
+            "flow": "DEFAULT",
+            "merchant":{
+                 "name":"XYZ Enterprises",
+                 "logo":"https://business.paytm.com/demo//static/images/merchant-logo.png?v=1.4"
+             },
+             "style":{
+                 "headerBackgroundColor":"#8dd8ff",
+                 "headerColor":"#3f3f40"
+            },
+            "data": {
+                "orderId": orderId,
+                "token": txnToken,
+                "tokenType": "TXN_TOKEN",
+                "amount": amount
+            },
+            "handler":{
+                 "notifyMerchant": function (eventName, data) {
+                    if(eventName == 'SESSION_EXPIRED'){
+                        alert("Your session has expired!!");
+                        location.reload();
+                    }
+                 }
+            }
+        };
+
+        if (window.Paytm && window.Paytm.CheckoutJS) {
+            // initialze configuration using init method
+            window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
+                console.log('Before JS Checkout invoke');
+                // after successfully update configuration invoke checkoutjs
+                window.Paytm.CheckoutJS.invoke();
+            }).catch(function onError(error) {
+                console.log("Error => ", error);
+            });
+        }
+    }
+</script>
+
+<footer>
+    <div class="footer-bottom">
+      <div class="lightBlue"></div>
+      <div class="darkBlue"></div>
+      <div class="linksdiv">
+      <ul class="footerlinks">
+        <li><a href="https://paytm.com/about-us/our-policies/" target="_blank">Terms of Service</a></li>
+        <li><a href="https://paytm.com/about-us/our-policies/" target="_blank">Privacy Policy</a></li>
+      </ul>
+      </div>
+      <div class="copyright footerlinks">
+        <ul><li>© 2020, One97 Communications Pvt. Ltd</li></ul>
+      </div>
+    </div>
+  </footer>
+
+
+<script async="" src="https://staticpg.paytm.in/checkoutjs/1765/paytm.checkout.js" type="application/javascript" crossorigin="anonymous"></script><script type="application/javascript" src="https://staticpg.paytm.in/common/lib/logger/ui-logger-v11.min.js?11" async="" crossorigin="anonymous"></script><script type="application/javascript">(function(w, d, q, o, t, s, f, se, js, fjs) {w[o] = w[o] || {init: function() {w[o][q] = arguments;}};(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);js.type = t;js.async = 1;js.src = f;fjs.parentNode.insertBefore(js, fjs);})(window,document,'_beforeLoadConfig','Oauth','text/javascript','script','https://accounts.paytm.com/oauth-js-sdk/shim/bundle.js');</script><iframe src="https://securegw.paytm.in/checkoutjs/1765/assets/iframes/dummy-frame.html" id="dummy-iframe" style="display: none;"></iframe></body></html>

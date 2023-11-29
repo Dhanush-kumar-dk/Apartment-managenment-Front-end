@@ -1,0 +1,183 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>complaint</title>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: "Poppins",sans-serif;
+    }
+    body{
+        display: grid;
+        height: 100vh;
+        justify-content: space-around;
+        align-self: auto;
+        background: url(https://img.freepik.com/free-photo/modern-hotel-room-with-illuminated-pictures_1203-1485.jpg?w=1060&t=st=1687250444~exp=1687251044~hmac=a9d68043ffc6a0786701fb619438479014d91e113635b65dbae83ff9cf60401c) no-repeat fixed 50% 95%; background-size: cover; color: #ffffff15; height: 50%; width: 100%; 
+
+    }
+    .container{
+        max-width: 700px;
+        width: 100%;
+        background: #ffffff;
+        padding: 25px 30px;
+        border-radius: 5px;
+    }
+    .container title{
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    .container .title::before{
+        content: '';
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        height: 3px;
+        width: 30px;
+        background: linear-gradient(#3aaefb, #eff0f0);
+    }
+    .container form .user-details{
+        color: black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    form .user-details .input-box{
+        margin: 20px 0 12px 0;
+        width: calc(100% / 2 - 20px);
+    }
+    .user-details .input-box .details{
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    .user-details .input-box input{
+        height: 45px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    textarea{
+        height: 80px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #fffcfc;
+    }
+    form .button{
+        height: 45px;
+        margin: 45px 0;
+    }
+    form .button input{
+        height: 100%;
+        width: 100%;
+        outline: none;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        background-color: #3aaefb;
+    }
+    form .button input:hover{
+        background: linear-gradient(-135deg, #3aaefb, #eff0f0);
+    }
+    @media (max-width: 584px) {
+        .container{
+            max-width: 100%;
+        }
+        form .user-details .input-box{
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .container form .user-details{
+            max-height: 300px;
+            overflow-y: scroll;
+        }
+    }
+
+</style>
+</head>
+<body><header>
+    <br>
+    <nav class="navbar bg-light gradient-custom" style="border-radius: 8px;">
+        <div class="container-1 justify-content-center" >
+            <ul><a><img src="E:\apartnment managenment\reduced size image\logo.png" alt="HIGH RISE BUILDERS" width="" height="35PX" ></a></ul>
+        </div>
+    </nav>
+</header>
+<br>
+    <div class="container" id="complaintform">
+        <div class="title">COMPLAINT FORM</div>
+        <form onsubmit="sendEmail(); reset(); return false;" >
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input id="fullname" type="text" placeholder="Enter Your Name">
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input id="phonenumber" type="text" placeholder="Enter Your Number">
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input id="email" type="text" placeholder="Enter Your Email">
+                </div>
+                <div class="input-box">
+                    <span class="details">Greivance Type</span>
+                    <input type="Text" list="Greivance">
+                    <datalist id="Greivance">
+                        <option>Payment Issue</option>
+                        <option>Maintainance</option>
+                        <option>Home Services</option>
+                        <option>Home Supplies</option>
+                    </datalist>
+                </div>
+                <div class="input-box">
+                    <span class="details">Explain Your Greivance</span>
+                    <input  id="expgreivance" type="text" placeholder="Greivance">
+                </div>
+                <div class="input-box">
+                    <span class="details">Remarks</span>
+                    <input type="Text" list="Remarks">
+                    <datalist id="Remarks">
+                        <option>Poor</option>
+                        <option>Average</option>
+                        <option>Good</option>
+                        <option>Excellent</option>
+                    </datalist>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Submit" >
+            </div>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+    <script> 
+    function sendEmail(){
+      Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "dhanushkumark62@gmail.com",
+        Password : "CC2F4C90556A3D3135B746592233B91DEE59",
+        To : 'dhanushkumark62@gmail.com',
+        From : 'dhanushkumark62@gmail.com',
+        Subject : "complaint ",
+        Body : "name : " + document.getElementById("fullname").value
+        +"<br> phone number : " + document.getElementById("phonenumber").value
+        +"<br> email : " + document.getElementById("email").value
+        +"<br> Greivance : " + document.getElementById("Greivance").value
+        + "<br>" +" Greivance : "  +  document.getElementById("expgreivance").value
+        +"<br> remarks : " + document.getElementById("Remarks").value
+    }).then(
+      message => alert(message)
+    );
+    }
+    </script>
+</body></html>

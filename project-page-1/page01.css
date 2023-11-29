@@ -1,0 +1,294 @@
+.navbar{
+box-sizing: border-box;
+width: 100%;
+height: 52px;
+background: linear-gradient(90.87deg, rgba(86, 231, 240, 0.8) 22.15%, rgba(78, 146, 225, 0.8) 69.53%);
+}
+h1{
+    text-align: center;
+    transition: 0.6ms;
+}
+h5{
+    font-size: xx-large;
+    font-style: oblique;
+}
+.img-box{
+    margin: 15px;
+    width: 1500px;
+}
+
+.contact-container {
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 25PX;
+  }
+.contact-img {
+    width: 40%;
+  }
+.contact-img img {
+    display: block;
+    height: 400px;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+  
+  .s-container {
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+  }
+  
+  .s-container input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 1rem;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .s-container textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    color: #444;
+    outline: none;
+    padding: 1rem 0;
+    resize: none;
+  }
+  
+  .s-container h2 {
+    font-size: 2.7rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 1rem;
+    margin-top: -1.2rem;
+  }
+  
+  .s-container a {
+    font-size: 1.3rem;
+  }
+form button{
+  color: #f1f1f1;
+  background-color: #000;
+}
+
+  html { height: 100%; }
+body { background: #FFF; font: 400 1.5em/1.5 "Droid Serif", serif; color: #111; text-align: center; height: 100%; }
+
+h2 { font: 700 1.5em/1.5 "Droid Sans", sans-serif; margin: 1em 0; }
+
+#banner { background: url(https://img.freepik.com/free-photo/modern-hotel-room-with-illuminated-pictures_1203-1485.jpg?w=1060&t=st=1687250444~exp=1687251044~hmac=a9d68043ffc6a0786701fb619438479014d91e113635b65dbae83ff9cf60401c) no-repeat fixed 50% 95%; background-size: cover; color: #ffffff15; height: 50%; width: 100%; }
+
+
+#content { max-width: 28em; text-align: justify; margin: 0 auto; padding: 2em; }
+
+#content p { margin: 0 0 2em; }
+#contact {
+    padding: 5rem 0;
+    background: rgb(226, 226, 226);
+  }
+
+footer{
+    width:100%;
+    height:50vh;
+    position:inherit;
+    bottom: 0%;
+    background: linear-gradient(0.87deg, rgba(68, 68, 68, 0.8) 22.15%, rgba(71, 74, 79, 0.8) 69.53%);
+    padding: 100px 0px 30px;
+    font-size: 13px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.row{
+    max-width: 1536px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-left: 10px;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 25px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 360px){
+    .navbar{
+    position: fixed;
+box-sizing: border-box;
+position:fixed;
+width: 1520px;;
+height: 48px;
+background: linear-gradient(90.87deg, rgba(86, 231, 240, 0.8) 22.15%, rgba(78, 146, 225, 0.8) 69.53%);
+/* Note: backdrop-filter has minimal browser support */
+}
+.carousel{
+    width:1510px;
+    height:550px;
+    }
+.carousel-inner{
+      width: 1510px;
+      height: 600px;
+    }
+.carousel-item{
+        width: 1510px;
+        height: 600px;
+      }
+iframe{
+    width: 1510px;
+    height: 400px;
+}
+.leftside img{
+            width:450px ;
+            height:300px ;
+}
+
+.rightside{
+    padding-left:840px;
+}
+.rightside img{
+            width: 450px;
+            height: 300px;
+}
+}.sidenav {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #706e6e00;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #0e0c0ce5;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .btnbtn-danger {
+    background-color: #1b1a1a00;
+      border: black;
+    color: rgb(255, 255, 255);
+      padding: 5px 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      cursor: pointer;
+    top: -9px;
+    right: 20px;
+    position: absolute;
+}
+.container-hover{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.card{
+    width: 430px;
+    height: 500px;
+    background: #fff;
+    position: relative;
+    display: flex;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+    transition: 0.5s ease-out;
+}
+.card:hover{
+    transform: translatey(-20px);
+}
+.card:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 430px;
+    height: 500px;
+    background: linear-gradient(to bottom, rgba(0,176,155,0.5), rgb(150, 201, 61, 1));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.card:hover:before{
+    opacity: 1;
+}
+.card img{
+    width: 430px;
+    height: 500px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.card .info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    text-align: center;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+
+}
+.card:hover .info{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.card .info h1{
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease-out 0.2s;
+    margin: 0 0 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+.card .info p{
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+.card .info .btn{
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transform: translateY(30px);
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.card .info .btn:hover{
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+}
